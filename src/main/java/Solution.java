@@ -1,13 +1,6 @@
-import java.io.*;
-import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
-import java.util.stream.LongStream;
+import java.util.Arrays;
 
 public class Solution {
-
-    static final long PROCCES_TIME = 10;
 
     static class Server  {
         long time = Long.MIN_VALUE;
@@ -21,7 +14,6 @@ public class Solution {
         long[] times = Arrays.stream(s.split(" "))
                 .mapToLong(Long::parseLong)
                 .toArray();
-
         Server[] servers = {new Server(), new Server(), new Server()};
         int[] sn = new int[times.length];
         for(int  i = 0; i < times.length; ++i) {
@@ -37,7 +29,7 @@ public class Solution {
         for(int s = 1; s < servers.length; ++s) {
             Server server = servers[s];
             long d = time - server.time;
-            if (delta > d && ) {
+            if (delta > d) {
                 delta = d;
                 server.time = time;
                 index = s + 1;
